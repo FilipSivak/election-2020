@@ -3,6 +3,7 @@ import json
 import pandas as pd
 from pathlib import Path
 import datetime
+from graph import make_graph
 
 target_filename = Path("election_data_SG_GA.csv")
 
@@ -26,3 +27,6 @@ else:
 
 # Save dataframe
 df.to_csv(target_filename, index = False)
+
+# Save graph
+make_graph()
