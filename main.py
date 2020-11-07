@@ -20,9 +20,9 @@ for candidate in record["candidates"]:
 
 # Append dataframe
 if target_filename.exists():
-    df = pd.read_csv(target_filename).append(pd.DataFrame(rows))
+    df = pd.read_csv(target_filename).append(pd.DataFrame([row]))
 else:
     df = pd.DataFrame([row])
 
 # Save dataframe
-df.sort_values(by = ["time"], ascending = True).to_csv(target_filename, index = False)
+df.to_csv(target_filename, index = False)
